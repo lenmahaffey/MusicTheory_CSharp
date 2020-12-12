@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+    CSC236 8N0 Intro to C#
+    Project: Final Project
+    File: Pitch.cs
+    By: Len Mahaffey
+    Last Edited: 12/11/20
+    Description: Pitch class to manage Chromatic Scale enumeration
+*/
 
 namespace CSC236_LMahaffey_FinalProject
 {
 	public class Pitch
 	{
+		//Enumerations of Chromatic Scale; not sure where else to put them
 		public enum ChromaticScalePosition
 		{
 			NONE = 0,
@@ -31,13 +35,13 @@ namespace CSC236_LMahaffey_FinalProject
 			Whole
 		};
 		public enum Step
-        {
+		{
 			NONE = 0,
 			Half,
 			Whole,
 			WholeAndAHalf,
 			Double
-        }
+		}
 
 		//Constructors
 		public Pitch()
@@ -85,39 +89,42 @@ namespace CSC236_LMahaffey_FinalProject
 			return GetWeightForPositionAsString(weight);
 		}
 
-
+		//Static methods to manage Chromatic Scale enums (get strings, get enum from a string, etc)
 		static public ChromaticScalePosition GetPositionFromChromaticScale(string pitch)
 		{
 			if (pitch == "NONE")
 				return ChromaticScalePosition.NONE;
 			else if (pitch == "A")
 				return ChromaticScalePosition.A;
-			else if (pitch == "AsBf" || pitch == "As" || pitch == "Bf")
+			else if (pitch == "AsBf" || pitch == "As" || pitch == "Bf" || pitch == "A♯" || pitch == "B♭" || pitch == "A♯/B♭")
 				return ChromaticScalePosition.AsBf;
 			else if (pitch == "B")
 				return ChromaticScalePosition.B;
 			else if (pitch == "C")
 				return ChromaticScalePosition.C;
-			else if (pitch == "CsDf" || pitch == "Cs" || pitch == "Df")
+			else if (pitch == "CsDf" || pitch == "Cs" || pitch == "Df" || pitch == "C♯" || pitch == "D♭" || pitch == "C♯/D♭")
 				return ChromaticScalePosition.CsDf;
 			else if (pitch == "D")
 				return ChromaticScalePosition.D;
-			else if (pitch == "DsEf" || pitch == "Ds" || pitch == "Ef")
+			else if (pitch == "DsEf" || pitch == "Ds" || pitch == "Ef" || pitch == "D♯" || pitch == "E♭" || pitch == "D♯/E♭")
 				return ChromaticScalePosition.DsEf;
 			else if (pitch == "E")
 				return ChromaticScalePosition.E;
 			else if (pitch == "F")
 				return ChromaticScalePosition.F;
-			else if (pitch == "FsGf" || pitch == "Fs" || pitch == "Gf")
+			else if (pitch == "FsGf" || pitch == "Fs" || pitch == "Gf" || pitch == "F♯" || pitch == "G♭" || pitch == "F♯/G♭")
 				return ChromaticScalePosition.FsGf;
 			else if (pitch == "G")
 				return ChromaticScalePosition.G;
-			else if (pitch == "GsAf" || pitch == "Gs" || pitch == "Af")
+			else if (pitch == "GsAf" || pitch == "Gs" || pitch == "Af" || pitch == "G♯" || pitch == "A♭" || pitch == "G♯/A♭")
 				return ChromaticScalePosition.GsAf;
 			else
-				//**TODO** implement exception handler
-				return ChromaticScalePosition.NONE;
-		}
+            {
+                MusicException e = new MusicException();
+				e.message = "Unknown position: " + pitch;
+				throw e;
+            }
+        }
 		static public ChromaticScalePosition GetPositionFromChromaticScale(int noteAsInt)
 		{
 			switch (noteAsInt)
@@ -149,8 +156,9 @@ namespace CSC236_LMahaffey_FinalProject
 				case 12:
 					return ChromaticScalePosition.GsAf;
 				default:
-					//**TODO** implement exception handler
-					return ChromaticScalePosition.NONE;
+					MusicException e = new MusicException();
+					e.message = "Int out of range! Use a whole number 0-11";
+					throw e;
 			}
 		}
 		static public string GetPositionAsString(ChromaticScalePosition position)
@@ -184,8 +192,10 @@ namespace CSC236_LMahaffey_FinalProject
 				case ChromaticScalePosition.GsAf:
 					return "GsAf";
 				default:
-					//**TODO** implement exception handler
-					return "NONE";
+					//This should never happen
+					MusicException e = new MusicException();
+					e.message = "Unknown position: " + position;
+					throw e;
 			}
 		}
 		static public Weight GetWeightForPosition(ChromaticScalePosition position)
@@ -219,8 +229,9 @@ namespace CSC236_LMahaffey_FinalProject
 				case ChromaticScalePosition.GsAf:
 					return Weight.Half;
 				default:
-					//**TODO** implement exception handler?
-					return Weight.NONE;
+					MusicException e = new MusicException();
+					e.message = "Unknown position: " + position;
+					throw e;
 			}
 		}
 		static public string GetWeightForPositionAsString(Weight weight)
@@ -234,8 +245,9 @@ namespace CSC236_LMahaffey_FinalProject
 				case Weight.Whole:
 					return "Whole";
 				default:
-					//**TODO** implement exception handler?
-					return "None";
+					MusicException e = new MusicException();
+					e.message = "Unknown weight: " + weight;
+					throw e;
 			}
 		}
 		static public string GetStepAsString(Step step)
@@ -253,8 +265,9 @@ namespace CSC236_LMahaffey_FinalProject
 				case Step.Double:
 					return "Double";
 				default:
-					//**TODO** implement exception handler
-					return "NONE";
+					MusicException e = new MusicException();
+					e.message = "Unknown step: " + step;
+					throw e;
 			}
 		}
         public override string ToString()

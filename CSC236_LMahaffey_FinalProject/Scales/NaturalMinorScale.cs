@@ -1,27 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿/*
+    CSC236 8N0 Intro to C#
+    Project: Final Project
+    File: NaturalMinor.cs
+    By: Len Mahaffey
+    Last Edited: 12/11/20
+    Description: Natural Minor implementation of Scale.cs  Currently can not resolve names of notes in scale.
+*/
 namespace CSC236_LMahaffey_FinalProject
 {
-	public class NatualMinorScale : Scale
+	public class NaturalMinorScale : Scale
 	{
-		public NatualMinorScale(Pitch pitch) : base(pitch, true, pitch.GetPositionAsString())
+		public NaturalMinorScale(Pitch pitch) : base(pitch, true, pitch.GetPositionAsString())
 		{
-			base.pattern = NatualMinorScale.pattern;
+			base.pattern = NaturalMinorScale.pattern;
 			SetScale();
+			relative = scale[2];
 		}
-		public NatualMinorScale(int pitchAsInt) : base(pitchAsInt, true)
+		public NaturalMinorScale(int pitchAsInt) : base(pitchAsInt, true)
 		{
-			base.pattern = NatualMinorScale.pattern;
+			base.pattern = NaturalMinorScale.pattern;
 			SetScale();
+			relative = scale[2];
 		}
-		public NatualMinorScale(string pitchAsString) : base(pitchAsString, true)
+		public NaturalMinorScale(string pitchAsString) : base(pitchAsString, true)
 		{
-			base.pattern = NatualMinorScale.pattern;
+			base.pattern = NaturalMinorScale.pattern;
 			SetScale();
+			relative = scale[2];
 		}
 		private new static Pitch.Step[] pattern = {	Pitch.Step.Whole,
 													Pitch.Step.Whole,
@@ -30,13 +35,17 @@ namespace CSC236_LMahaffey_FinalProject
 													Pitch.Step.Whole,
 													Pitch.Step.Half,
 													Pitch.Step.Whole};
-		public override string ToString()
-		{
-			return Name;
-		}
+		//Methods
+		//Resolve name of each note in scale. Two rules, all sharps or flats and each letter appears once.
+		//The first note must have a correct name. AsBf and other dual names can not be resolved.
+		//The correct name of each accented note requires more musical research.
 		protected override void ResolveScale()
 		{
 			scale = unresolvedScale;
+		}
+		public override string ToString()
+		{
+			return Name;
 		}
 	}
 }

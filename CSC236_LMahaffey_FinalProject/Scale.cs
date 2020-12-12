@@ -1,8 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+    CSC236 8N0 Intro to C#
+    Project: Final Project
+    File: Scale.cs
+    By: Len Mahaffey
+    Last Edited: 12/11/20
+    Description: Abstract class for scale implementation. Base class builds will "NONE" steps for pattern.
+				 Derived classes must provide scale pattern and method to resolve note names.
+*/
 
 namespace CSC236_LMahaffey_FinalProject
 {
@@ -57,6 +61,11 @@ namespace CSC236_LMahaffey_FinalProject
 		private ChordPatterns chordPatterns;
 		public bool IsMajor { get; set; }
 		public int ScalePatternLength { get; set; }
+		public Note relative { get; protected set; }
+		protected Pitch.Step[] pattern { get; set; }
+		protected Note[] scale { get; set; }
+		protected Note[] unresolvedScale { get; set; }
+		//No private backing field for each chord. Getter uses private field of scale to calculate and return new array
 		public Note[] I
         {
             get
@@ -148,7 +157,8 @@ namespace CSC236_LMahaffey_FinalProject
 				return arr;
 			}
 		}
-		protected Note[] scale;
+
+		//Methods
 		public string GetScaleAsString()
 		{
 			string s = "";
@@ -174,7 +184,7 @@ namespace CSC236_LMahaffey_FinalProject
 			s = s.Trim();
 			return s;
 		}
-		protected Note[] unresolvedScale;
+
 		public string getUnresolvedScaleAsString()
 		{
 			string s = "";
@@ -188,7 +198,7 @@ namespace CSC236_LMahaffey_FinalProject
 			s = s.Trim();
 			return s;
 		}
-		protected Pitch.Step[] pattern;
+		//Method to calculate scale based off pattern and Chromatic Scale
         protected void SetScale()
         {
 			{
@@ -225,6 +235,7 @@ namespace CSC236_LMahaffey_FinalProject
 				ResolveScale();
 			}
 		}
+		//Each scale to be implemented must provide a method to name each note.
 		protected abstract void ResolveScale();
 	}
 }

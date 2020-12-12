@@ -1,14 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CSC236_LMahaffey_FinalProject;
+﻿/*
+    CSC236 8N0 Intro to C#
+    Project: Final Project
+    File: MusicObject.cs
+    By: Len Mahaffey
+    Last Edited: 12/11/20
+    Description: Base class for MusicTheory objects.
+*/
 
 namespace CSC236_LMahaffey_FinalProject
 {
     public class MusicObject
     {
+		//Constructors
 		public MusicObject()
 		{
 			pitch = new Pitch(0);
@@ -50,20 +53,25 @@ namespace CSC236_LMahaffey_FinalProject
 			}
 		}
 		private string name;
+		//Replace 's' and 'f' with Unicode symbols in new string in getter and keep name property the same
 		public string Name
 		{
 			get
             {
 				string s = name;
-				if (name.Contains("s"))
+				if (s.Contains("s"))
 				{
-					s = name.Replace("s", "♯");
+					s = s.Replace("s", "♯");
 				}
-				if (name.Contains("f"))
-				{
-					s = name.Replace("f", "♭");
-				}
-				return s;
+                if (s.Contains("f"))
+                {
+                    s = s.Replace("f", "♭");
+                }
+                if (s.Length == 4 && s != "NONE")
+                {
+                    s = s.Insert(2, "/");
+                }
+                return s;
             }
             set
             {

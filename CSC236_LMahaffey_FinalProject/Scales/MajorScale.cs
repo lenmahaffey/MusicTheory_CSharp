@@ -1,28 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+    CSC236 8N0 Intro to C#
+    Project: Final Project
+    File: MajorScale.cs
+    By: Len Mahaffey
+    Last Edited: 12/11/20
+    Description: Major Scale implementation of Scale.cs.  Fully working
+*/
 
 namespace CSC236_LMahaffey_FinalProject
 {
 	public class MajorScale : Scale
 	{
+		//Constructors
 		public MajorScale(Pitch pitch) : base(pitch, true, pitch.GetPositionAsString())
 		{
 			base.pattern = MajorScale.pattern;
 			SetScale();
+			relative = scale[5];
 		}
 		public MajorScale(int pitchAsInt) : base(pitchAsInt, true)
 		{
 			base.pattern = MajorScale.pattern;
 			SetScale();
+			relative = scale[5];
 		}
 		public MajorScale(string pitchAsString) : base(pitchAsString, true)
 		{
 			base.pattern = MajorScale.pattern;
 			SetScale();
+			relative = scale[5];
 		}
+
+		//Properties
 		private new static Pitch.Step[] pattern = {Pitch.Step.Whole,
 													Pitch.Step.Whole,
 													Pitch.Step.Whole,
@@ -30,10 +39,11 @@ namespace CSC236_LMahaffey_FinalProject
 													Pitch.Step.Whole,
 													Pitch.Step.Whole,
 													Pitch.Step.Whole};
-		public override string ToString()
-		{
-			return Name;
-		}
+		//Methods
+		//Resolve name of each note in scale. Two rules, all sharps or flats and each letter appears once.
+		//The first note must have a correct name. AsBf and other dual names can not be resolved.
+		//The correct name of each accented note requires more musical research.
+		//This method for the Major scale is working and tested
 		protected override void ResolveScale()
 		{
 			for (int i = 0; i < ScalePatternLength; i++)
@@ -126,6 +136,10 @@ namespace CSC236_LMahaffey_FinalProject
 					scale[i] = currentNote;
 				}
 			}
+		}
+		public override string ToString()
+		{
+			return Name;
 		}
 	}
 }

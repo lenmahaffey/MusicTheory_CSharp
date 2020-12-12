@@ -1,8 +1,10 @@
 ﻿/*
     CSC236 8N0 Intro to C#
-    Project:
+    Project: Final Project
+    File: Note.cs
     By: Len Mahaffey
-    Last Edited
+    Last Edited: 12/11/20
+    Description: Note class. Will be useful for managing multiple Chromatic Scales (repeating pattern) in a single scale.
 */
 
 using System;
@@ -27,7 +29,7 @@ namespace CSC236_LMahaffey_FinalProject
 		}
         public override string ToString()
         {
-			return Name;
+            return Name;
         }
     }
 }

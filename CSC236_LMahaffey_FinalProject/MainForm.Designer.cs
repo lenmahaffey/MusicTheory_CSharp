@@ -1,6 +1,6 @@
 ﻿namespace CSC236_LMahaffey_FinalProject
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveCurrentScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.PentatonicMinorLabel = new System.Windows.Forms.Label();
-            this.PentatonicMajorLabel = new System.Windows.Forms.Label();
             this.HarmonicMinorLabel = new System.Windows.Forms.Label();
             this.NaturalMinorLabel = new System.Windows.Forms.Label();
             this.MelodicMinorLabel = new System.Windows.Forms.Label();
@@ -55,6 +53,7 @@
             this.AButton = new System.Windows.Forms.Button();
             this.GsAfButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.RelativeTextLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,8 +82,6 @@
             this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -94,33 +91,37 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveCurrentScaleToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(59, 29);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // editToolStripMenuItem
+            // saveCurrentScaleToolStripMenuItem
             // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(61, 29);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
-            this.viewToolStripMenuItem.Text = "View";
+            this.saveCurrentScaleToolStripMenuItem.Name = "saveCurrentScaleToolStripMenuItem";
+            this.saveCurrentScaleToolStripMenuItem.Size = new System.Drawing.Size(270, 30);
+            this.saveCurrentScaleToolStripMenuItem.Text = "Save Current Scale";
+            this.saveCurrentScaleToolStripMenuItem.Click += new System.EventHandler(this.saveCurrentScaleToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(68, 29);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.PentatonicMinorLabel);
-            this.panel1.Controls.Add(this.PentatonicMajorLabel);
             this.panel1.Controls.Add(this.HarmonicMinorLabel);
             this.panel1.Controls.Add(this.NaturalMinorLabel);
             this.panel1.Controls.Add(this.MelodicMinorLabel);
@@ -128,32 +129,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(24, 70);
+            this.panel1.Location = new System.Drawing.Point(24, 119);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(210, 366);
             this.panel1.TabIndex = 2;
-            // 
-            // PentatonicMinorLabel
-            // 
-            this.PentatonicMinorLabel.AutoSize = true;
-            this.PentatonicMinorLabel.Location = new System.Drawing.Point(9, 274);
-            this.PentatonicMinorLabel.Name = "PentatonicMinorLabel";
-            this.PentatonicMinorLabel.Size = new System.Drawing.Size(174, 25);
-            this.PentatonicMinorLabel.TabIndex = 6;
-            this.PentatonicMinorLabel.Text = "Pentatonic Minor";
-            this.PentatonicMinorLabel.Click += new System.EventHandler(this.PentatonicMinorLabel_Click);
-            this.PentatonicMinorLabel.MouseHover += new System.EventHandler(this.PentatonicMinorLabel_MouseHover);
-            // 
-            // PentatonicMajorLabel
-            // 
-            this.PentatonicMajorLabel.AutoSize = true;
-            this.PentatonicMajorLabel.Location = new System.Drawing.Point(9, 225);
-            this.PentatonicMajorLabel.Name = "PentatonicMajorLabel";
-            this.PentatonicMajorLabel.Size = new System.Drawing.Size(174, 25);
-            this.PentatonicMajorLabel.TabIndex = 5;
-            this.PentatonicMajorLabel.Text = "Pentatonic Major";
-            this.PentatonicMajorLabel.Click += new System.EventHandler(this.PentatonicMajorLabel_Click);
-            this.PentatonicMajorLabel.MouseHover += new System.EventHandler(this.PentatonicMajorLabel_MouseHover);
             // 
             // HarmonicMinorLabel
             // 
@@ -364,6 +343,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.RelativeTextLabel);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label4);
@@ -383,10 +363,19 @@
             this.panel3.Controls.Add(this.NameLabel);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(348, 36);
+            this.panel3.Location = new System.Drawing.Point(322, 48);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(571, 400);
             this.panel3.TabIndex = 4;
+            // 
+            // RelativeTextLabel
+            // 
+            this.RelativeTextLabel.AutoSize = true;
+            this.RelativeTextLabel.Location = new System.Drawing.Point(452, 114);
+            this.RelativeTextLabel.Name = "RelativeTextLabel";
+            this.RelativeTextLabel.Size = new System.Drawing.Size(26, 25);
+            this.RelativeTextLabel.TabIndex = 17;
+            this.RelativeTextLabel.Text = "A";
             // 
             // label2
             // 
@@ -454,11 +443,11 @@
             // RelativeLabel
             // 
             this.RelativeLabel.AutoSize = true;
-            this.RelativeLabel.Location = new System.Drawing.Point(405, 67);
+            this.RelativeLabel.Location = new System.Drawing.Point(382, 71);
             this.RelativeLabel.Name = "RelativeLabel";
-            this.RelativeLabel.Size = new System.Drawing.Size(156, 25);
+            this.RelativeLabel.Size = new System.Drawing.Size(96, 25);
             this.RelativeLabel.TabIndex = 9;
-            this.RelativeLabel.Text = "Relative Minor:";
+            this.RelativeLabel.Text = "Relative:";
             // 
             // VIILabel
             // 
@@ -541,7 +530,7 @@
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "Scale Name";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -552,8 +541,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1046, 589);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1046, 589);
+            this.Name = "MainForm";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MusicTheory";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -568,17 +563,12 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button AButton;
         private System.Windows.Forms.Button GsAfButton;
-        private System.Windows.Forms.Label PentatonicMinorLabel;
-        private System.Windows.Forms.Label PentatonicMajorLabel;
         private System.Windows.Forms.Label HarmonicMinorLabel;
         private System.Windows.Forms.Label NaturalMinorLabel;
         private System.Windows.Forms.Label MajorLabel;
@@ -611,6 +601,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label MelodicMinorLabel;
+        private System.Windows.Forms.Label RelativeTextLabel;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveCurrentScaleToolStripMenuItem;
     }
 }
 

@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+    CSC236 8N0 Intro to C#
+    Project: Final Project
+    File: ChordPatterns.cs
+    By: Len Mahaffey
+    Last Edited: 12/11/20
+    Description: Data structure to store chord patterns. Chords are derived from individual notes in a scale, in this case the 1st, 3rd and 4th notes.
+				 Each note of a scale can be used to form chords 1-7 (notated in Roman numerals). The chords formed at the end of a scale
+				 will use notes from the next iteration of the Chromatic Scale. Values for chord notes are hard coded until a clever solution is derived.
+*/
 
 namespace CSC236_LMahaffey_FinalProject
 {
 	class ChordPatterns
 	{
+		//Constructors
 		public ChordPatterns()
 		{
 			_I_Chord.pattern = new int[] { 0, 2, 4 };

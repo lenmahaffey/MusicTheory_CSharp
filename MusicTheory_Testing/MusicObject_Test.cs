@@ -1,4 +1,11 @@
-using System;
+﻿/*
+    CSC236 8N0 Intro to C#
+    Project: Final Project
+    File: MusicObject_Test.cs
+    By: Len Mahaffey
+    Last Edited: 12/11/20
+    Description: MusicObject class testing
+*/
 using Xunit;
 using CSC236_LMahaffey_FinalProject;
 
@@ -587,21 +594,21 @@ namespace MusicObject_Test
         [Fact]
         public void AsBfgetPositionAsString_Test()
         {
-            string expected = "AsBf";
+            string expected = "A♯/B♭";
             MusicObject AsBf = new MusicObject("AsBf");
             Assert.Equal(expected, AsBf.Name);
         }
         [Fact]
         public void AsgetPositionAsString_Test()
         {
-            string expected = "As";
+            string expected = "A♯";
             MusicObject AsBf = new MusicObject("As");
             Assert.Equal(expected, AsBf.Name);
         }
         [Fact]
         public void BfgetPositionAsString_Test()
         {
-            string expected = "Bf";
+            string expected = "B♭";
             MusicObject AsBf = new MusicObject("Bf");
             Assert.Equal(expected, AsBf.Name);
         }
@@ -622,21 +629,21 @@ namespace MusicObject_Test
         [Fact]
         public void CsDfgetPositionAsString_Test()
         {
-            string expected = "CsDf";
+            string expected = "C♯/D♭";
             MusicObject CsDf = new MusicObject("CsDf");
             Assert.Equal(expected, CsDf.Name);
         }
         [Fact]
         public void CsgetPositionAsString_Test()
         {
-            string expected = "Cs";
+            string expected = "C♯";
             MusicObject CsDf = new MusicObject("Cs");
             Assert.Equal(expected, CsDf.Name);
         }
         [Fact]
         public void DfgetPositionAsString_Test()
         {
-            string expected = "Df";
+            string expected = "D♭";
             MusicObject CsDf = new MusicObject("Df");
             Assert.Equal(expected, CsDf.Name);
         }
@@ -650,21 +657,21 @@ namespace MusicObject_Test
         [Fact]
         public void DsEfgetPositionAsString_Test()
         {
-            string expected = "DsEf";
+            string expected = "D♯/E♭";
             MusicObject DsEf = new MusicObject("DsEf");
             Assert.Equal(expected, DsEf.Name);
         }
         [Fact]
         public void DsgetPositionAsString_Test()
         {
-            string expected = "Ds";
+            string expected = "D♯";
             MusicObject DsEf = new MusicObject("Ds");
             Assert.Equal(expected, DsEf.Name);
         }
         [Fact]
         public void EfgetPositionAsString_Test()
         {
-            string expected = "Ef";
+            string expected = "E♭";
             MusicObject DsEf = new MusicObject("Ef");
             Assert.Equal(expected, DsEf.Name);
         }
@@ -685,21 +692,21 @@ namespace MusicObject_Test
         [Fact]
         public void FsGfgetPositionAsString_Test()
         {
-            string expected = "FsGf";
+            string expected = "F♯/G♭";
             MusicObject FsGf = new MusicObject("FsGf");
             Assert.Equal(expected, FsGf.Name);
         }
         [Fact]
         public void FsgetPositionAsString_Test()
         {
-            string expected = "Fs";
+            string expected = "F♯";
             MusicObject FsGf = new MusicObject("Fs");
             Assert.Equal(expected, FsGf.Name);
         }
         [Fact]
         public void GfgetPositionAsString_Test()
         {
-            string expected = "Gf";
+            string expected = "G♭";
             MusicObject FsGf = new MusicObject("Gf");
             Assert.Equal(expected, FsGf.Name);
         }
@@ -713,7 +720,7 @@ namespace MusicObject_Test
         [Fact]
         public void GsAfgetPositionAsString_Test()
         {
-            string expected = "GsAf";
+            string expected = "G♯/A♭";
             MusicObject GsAf = new MusicObject("GsAf");
             Assert.Equal(expected, GsAf.Name);
         }

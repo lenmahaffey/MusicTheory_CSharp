@@ -1,4 +1,11 @@
-using System;
+/*
+    CSC236 8N0 Intro to C#
+    Project: Final Project
+    File: Pitch_Test.cs
+    By: Len Mahaffey
+    Last Edited: 12/11/20
+    Description: Pitch class testing
+*/
 using Xunit;
 using CSC236_LMahaffey_FinalProject;
 
