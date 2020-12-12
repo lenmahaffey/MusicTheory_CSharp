@@ -275,5 +275,10 @@ namespace CSC236_LMahaffey_FinalProject
         {
             Application.Run(new SplashForm());
         }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+        }
     }
 }

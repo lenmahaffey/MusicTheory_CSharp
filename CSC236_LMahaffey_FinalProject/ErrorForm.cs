@@ -27,6 +27,7 @@ namespace CSC236_LMahaffey_FinalProject
         {
             Message_Label.Text = Message;
             layoutControls();
+            this.TopMost = true;
         }
         private void layoutControls()
         {
