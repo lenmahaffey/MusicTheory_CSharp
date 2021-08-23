@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CSC236_LMahaffey_FinalProject\CSC236_LMahaffey_FinalProject.csproj" />
+    <ProjectReference Include="..\CSC236_LMahaffey_FinalProject\MusicTheory-CSharp.csproj" />
   </ItemGroup>
 
 </Project>
